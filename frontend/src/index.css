@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Custom calendar grid styles */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  min-height: 100vh;
+}
+
+.calendar-row {
+  display: contents;
+}
+
+.calendar-cell {
+  border: 1px solid #e5e7eb;
+  min-height: 60px;
+  position: relative;
+}
+
+.date-cell {
+  background: #f9fafb;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: horizontal-tb;
+}
+
+.weekend-saturday {
+  background-color: #dcfce7 !important;
+}
+
+.weekend-sunday {
+  background-color: #fecaca !important;
+}
+
+/* Service type colors */
+.service-gudstjeneste {
+  background-color: #fef3c7;
+  border-left: 4px solid #f59e0b;
+}
+
+.service-vielse {
+  background-color: #e0e7ff;
+  border-left: 4px solid #6366f1;
+}
+
+.service-konsert {
+  background-color: #f3e8ff;
+  border-left: 4px solid #a855f7;
+}
+
+.service-annet {
+  background-color: #f0f9ff;
+  border-left: 4px solid #0ea5e9;
+}
+
+.service-vikartjeneste {
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+}
+
+/* Absence type colors */
+.absence-frihelg {
+  background-color: #bfdbfe;
+  border-left: 4px solid #3b82f6;
+}
+
+.absence-avspasering {
+  background-color: #bbf7d0;
+  border-left: 4px solid #10b981;
+}
+
+.absence-sykemelding {
+  background-color: #fed7d7;
+  border-left: 4px solid #f56565;
+}
+
+.absence-ferie {
+  background-color: #a7f3d0;
+  border-left: 4px solid #059669;
+}
+
+/* Drag and drop styles */
+.dragging {
+  opacity: 0.5;
+  transform: rotate(5deg);
+}
+
+.drop-zone {
+  transition: all 0.2s ease;
+}
+
+.drop-zone.drag-over {
+  background-color: #dbeafe;
+  border: 2px dashed #3b82f6;
+}
+
+/* Event card styles */
+.event-card {
+  margin: 2px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-time {
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.event-church {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.event-notes {
+  font-size: 10px;
+  font-style: italic;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* Toolbox styles */
+.toolbox {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.toolbox-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-radius: 6px;
+  cursor: grab;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.toolbox-item:active {
+  cursor: grabbing;
+}
+
+.toolbox-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Button styles */
+.btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-size: 14px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #4b5563;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+/* Column resize handle */
+.resize-handle {
+  position: absolute;
+  right: -2px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  cursor: col-resize;
+  background: transparent;
+  border-right: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.resize-handle:hover {
+  border-right-color: #3b82f6;
+}
