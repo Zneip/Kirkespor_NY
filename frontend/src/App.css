@@ -1,0 +1,13 @@
+/* App-specific styles that complement the main index.css */
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+/* Additional component-specific styles can be added here */
